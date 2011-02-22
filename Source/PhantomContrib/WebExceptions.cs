@@ -1,4 +1,5 @@
 ﻿using Phantom.Core;
+using PhantomContrib.Core;
 
 namespace PhantomContrib
 {

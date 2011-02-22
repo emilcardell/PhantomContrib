@@ -1,7 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Data.SqlClient;
 
-namespace Phantom.Core.Builtins
+namespace PhantomContrib.Core.Builtins
 {
     [CompilerGlobalScope]
     public sealed class MsSqlFunctions
