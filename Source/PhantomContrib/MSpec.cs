@@ -6,8 +6,9 @@ using Phantom.Core.Builtins;
 
 namespace PhantomContrib
 {
-    public class MSpec: ExecutableTool<MSpec> {
-        public MSpec()
+    public class mspec : ExecutableTool<mspec>
+    {
+        public mspec()
         {
             toolPath = "Library/MSpec/mspec.exe";
             teamCityArgs = "--teamcity";

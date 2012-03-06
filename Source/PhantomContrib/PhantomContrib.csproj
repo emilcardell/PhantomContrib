@@ -34,9 +34,10 @@
     <Reference Include="AsyncCtpLibrary">
       <HintPath>..\..\packages\RavenDB-Client.1.0.700\lib\net40\AsyncCtpLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Web.Administration, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Web.Administration, Version=7.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Windows\System32\inetsrv\Microsoft.Web.Administration.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Windows\System32\inetsrv\Microsoft.Web.Administration.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\packages\Newtonsoft.Json.4.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
@@ -71,7 +72,7 @@
   <ItemGroup>
     <Compile Include="IIS7Administraion.cs" />
     <Compile Include="iis7_create_site.cs" />
-    <Compile Include="MSpec.cs" />
+    <Compile Include="mspec.cs" />
     <Compile Include="MsSqlFunctions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ravendb_create_tenant.cs" />

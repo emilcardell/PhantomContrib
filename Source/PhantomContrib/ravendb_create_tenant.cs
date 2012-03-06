@@ -25,6 +25,7 @@ namespace PhantomContrib
 
             using (var documentStore = new DocumentStore { Url = serverUrl })
             {
+                documentStore.Initialize();
                 documentStore.DatabaseCommands.EnsureDatabaseExists(tenantName);
             }
             return this;
