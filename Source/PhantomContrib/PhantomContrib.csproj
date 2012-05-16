@@ -70,7 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IIS7Administraion.cs" />
+    <Compile Include="IIS7Administration.cs" />
     <Compile Include="iis7_create_site.cs" />
     <Compile Include="mspec.cs" />
     <Compile Include="MsSqlFunctions.cs" />
