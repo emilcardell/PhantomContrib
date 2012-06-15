@@ -114,7 +114,6 @@ namespace PhantomContrib
             if (contentPathUsedByTask.Equals(substitutionsPathUsedByTask, StringComparison.InvariantCultureIgnoreCase) && (contentRoot == substitutionsRoot))
             {
                 Console.WriteLine("The SubstitutionsRoot must be different from the ContentRoot when the ContentFile and SubstitutionsFile are the same.");
-                return false;
             }
 
             XmlDocument contentDocument = LoadContentDocument();
