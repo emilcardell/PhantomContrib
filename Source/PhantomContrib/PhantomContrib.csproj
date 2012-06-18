@@ -78,6 +78,7 @@
     <Compile Include="ravendb_create_tenant.cs" />
     <Compile Include="WebExceptions.cs" />
     <Compile Include="XmlMassUpdate.cs" />
+    <Compile Include="XmlUpdate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
