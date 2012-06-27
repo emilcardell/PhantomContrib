@@ -12,7 +12,6 @@ namespace PhantomContrib.Test
             var destinationFolder = @"C:\myproject\Result\";
 
             new XmlUpdate().UpdateConfigFile(masterFile, updateFile, destinationFolder);
-
         }
 
         [Test]
