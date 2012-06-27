@@ -16,7 +16,7 @@ namespace PhantomContrib
 
             foreach (var masterFile in masterFiles)
             {
-                var updateFileName = masterFile.Substring(0, "master.config".Length) + updateFileNameEnding;
+                var updateFileName = masterFile.Substring(0, masterFile.Length - "master.config".Length) + updateFileNameEnding;
                 var updateFile = files.FirstOrDefault(x => x.Equals(updateFileName, StringComparison.InvariantCultureIgnoreCase));
 
                 xmlUpdater.UpdateConfigFile(masterFile, updateFile, destinationFolder.Replace('\\', '/'));
