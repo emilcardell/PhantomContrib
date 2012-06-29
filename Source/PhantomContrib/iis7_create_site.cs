@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -21,6 +22,7 @@ namespace PhantomContrib
         public string siteName { get; set; }
         public string bindingProtocol { get; set; }
         public string bindingInformation { get; set; }
+        public IEnumerable<string> multipleBindingInformation { get; set; }
         public string applicationPoolName { get; set; }
         public string managedPipelineMode { get; set; }
         public byte[] certificateHash { get; set; }
@@ -35,10 +37,13 @@ namespace PhantomContrib
             if (string.IsNullOrEmpty(path))
                 throw new InvalidOperationException("Please specify a site path");
 
-
-
             if (string.IsNullOrEmpty(applicationPoolName))
                 applicationPoolName = siteName;
+
+            if(multipleBindingInformation  != null)
+            {
+                bindingInformation = multipleBindingInformation.FirstOrDefault();
+            }
 
             using (var iisManager = new ServerManager())
             {
@@ -65,6 +70,11 @@ namespace PhantomContrib
                     siteToCreate = iisManager.Sites.Add(siteName, bindingProtocol, bindingInformation, fixedPath);
                 
                 siteToCreate.Applications.First().ApplicationPoolName = applicationPoolName;
+                foreach (var binding in multipleBindingInformation.Skip(1))
+                {
+                    siteToCreate.Bindings.Add(binding, "http");
+                }
+
                 iisManager.CommitChanges();
             }
 
