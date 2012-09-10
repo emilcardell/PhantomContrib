@@ -31,34 +31,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AsyncCtpLibrary">
-      <HintPath>..\..\packages\RavenDB-Client.1.0.700\lib\net40\AsyncCtpLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Web.Administration, Version=7.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Windows\System32\inetsrv\Microsoft.Web.Administration.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\packages\Newtonsoft.Json.4.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="NLog">
-      <HintPath>..\..\packages\NLog.2.0.0.2000\lib\net40\NLog.dll</HintPath>
-    </Reference>
     <Reference Include="Phantom.Core">
       <HintPath>..\..\Library\Phantom\Phantom.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Raven.Abstractions">
-      <HintPath>..\..\packages\RavenDB-Client.1.0.700\lib\net40\Raven.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Raven.Client.Debug">
-      <HintPath>..\..\packages\RavenDB-Client.1.0.700\lib\net40\Raven.Client.Debug.dll</HintPath>
-    </Reference>
-    <Reference Include="Raven.Client.Lightweight">
-      <HintPath>..\..\packages\RavenDB-Client.1.0.700\lib\net40\Raven.Client.Lightweight.dll</HintPath>
-    </Reference>
-    <Reference Include="Raven.Client.MvcIntegration">
-      <HintPath>..\..\packages\RavenDB-Client.1.0.700\lib\net40\Raven.Client.MvcIntegration.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -75,11 +54,8 @@
     <Compile Include="mspec.cs" />
     <Compile Include="MsSqlFunctions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ravendb_create_tenant.cs" />
+    <Compile Include="ServerManagerExtentions.cs" />
     <Compile Include="WebExceptions.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
