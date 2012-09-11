@@ -13,7 +13,8 @@
 // You must not remove this notice, or any other, from this software.
 
 #endregion
-using Phantom.Core;
+
+using System;
 using System.Runtime.CompilerServices;
 using Microsoft.Web.Administration;
 
@@ -25,11 +26,11 @@ namespace PhantomContrib
         public static bool iis7_site_exists(string siteName) 
         {
             if(string.IsNullOrEmpty(siteName))
-                throw  new StringIsNullOrEmptyException("siteName");
+                throw  new NullReferenceException("siteName");
 
             using (var iisManager = new ServerManager())
             {
-                var site = iisManager.GetSiteByName(siteName); 
+                var site = iisManager.GetSiteByNameSupressErrors(siteName); 
                 return site != null;
             }
         }
@@ -37,7 +38,7 @@ namespace PhantomContrib
         public static bool iis7_site_isStopped(string siteName)
         {
             if (string.IsNullOrEmpty(siteName))
-                throw new StringIsNullOrEmptyException("siteName");
+                throw new NullReferenceException("siteName");
 
             using (var iisManager = new ServerManager())
             {
@@ -50,7 +51,7 @@ namespace PhantomContrib
         public static bool iis7_site_isRunning(string siteName)
         {
             if (string.IsNullOrEmpty(siteName))
-                throw new StringIsNullOrEmptyException("siteName");
+                throw new NullReferenceException("siteName");
 
             using (var iisManager = new ServerManager())
             {
@@ -65,7 +66,7 @@ namespace PhantomContrib
         public static void iis7_stop_site(string siteName)
         {
             if(string.IsNullOrEmpty(siteName))
-                throw  new StringIsNullOrEmptyException("siteName");
+                throw  new NullReferenceException("siteName");
 
             using (var iisManager = new ServerManager())
             {
@@ -79,7 +80,7 @@ namespace PhantomContrib
         public static void iis7_start_site(string siteName)
         {
             if (string.IsNullOrEmpty(siteName))
-                throw new StringIsNullOrEmptyException("siteName");
+                throw new NullReferenceException("siteName");
 
             using (var iisManager = new ServerManager())
             {
